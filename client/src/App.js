@@ -6,6 +6,24 @@ import MyCom from "./MyCom";
 class App extends Component {
   state = { content: "hello world!", useless: "world hello!" };
 
+  componentWillReceiveProps(nextProps) {
+    console.log("Inside App componentWillReceiveProps", nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // const { content } = this.props;
+    console.log("Inside App shouldComponentUpdate", nextProps, nextState);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log("Inside App componentWillUpdate", nextProps, nextState);
+  }
+
+  componentDidUpdate() {
+    console.log("Inside App componentDidUpdate");
+  }
+
   render() {
     const { content, useless } = this.state;
     return (
