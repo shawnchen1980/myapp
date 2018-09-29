@@ -5,13 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "startProd": "cross-env NODE_ENV=production npm run start ",
+    "startDev": "cross-env NODE_ENV=development npm run start ",
+    "client": "npm run start --prefix=../client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
