@@ -1,21 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import MyCom from "./MyCom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Quiz from "./pages/Quiz";
+// import logo from "./logo.svg";
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <MyCom />
-    <p className="App-intro">
-      To get started, edit
-      <code>src/App.js</code>
-      and save to reload.
-    </p>
-  </div>
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" component={Quiz} />
+    </Switch>
+  </BrowserRouter>
 );
 
 export default App;
